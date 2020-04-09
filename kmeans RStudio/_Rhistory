@@ -1,0 +1,92 @@
+library(ggmap)library(ggplot2)library(tidyverse)library(dplyr)library(NbClust)library(factoextra)library(readxl)library(kableExtra)#Load datasettestData6<-read_xlsx("C:/Users/David/Desktop/Qlik/Excel/TKD Sales Region 4.XLSX")
+(PDF) KMeans Cluster Analysis, Scoring and Visualization. Available from: https://www.researchgate.net/publication/331635557_KMeans_Cluster_Analysis_Scoring_and_Visualization [accessed Mar 04 2020].
+library(ggmap)
+library(ggplot2)
+library(tidyverse)
+library(dplyr)
+library(NbClust)
+library(factoextra)
+library(readcsv)
+library(kableExtra)
+#Load dataset
+testData6<-read_xlsx(C:\Users\Pratiksha Wadibhasme\Desktop\data.csv")
+install.packages(c("ggmap", "ggplot2", "tidyverse", "dplyr", "NbClust", "factoextra", "kableExtra"))
+data <- read.csv("C:/Users/Pratiksha Wadibhasme/Desktop/data.csv")
+View(data)
+data <- read.csv("C:/Users/Pratiksha Wadibhasme/Desktop/data.csv")
+View(data)
+data <- read.csv("C:/Users/Pratiksha Wadibhasme/Desktop/data.csv")
+View(data)
+df<-head(testData6)
+kable(df) %>%
+kable_styling(bootstrap_options = "striped", font_size= 10, full_width = F)
+df<-head(testData6)
+kable(df)
+kable_styling(bootstrap_options = "striped", font_size= 10, full_width = F)
+df<-head(testData6)
+kable(df)
+kable_styling(bootstrap_options = "striped", font_size= 10, full_width = F)
+install.packages("kableExtra")
+df<-head(testData6)
+kable(df)
+kable_styling(bootstrap_options = "striped", font_size= 10, full_width = F)
+set.seed(20)
+Test1<-scale(na.omit(data.matrix(testData6)[-1]))
+set.seed(20)
+Test1<-scale(na.omit(data.matrix(data6)[-1]))
+set.seed(20)
+Test1<-scale(na.omit(data.matrix(data)[-1]))
+View(Test1)
+View(Test1)
+wssplot <- function(Test1, nc=20, seed=123){
+wss <- (nrow(Test1)-1)*sum(apply(Test1,2,var))
+for (i in 2:nc){
+set.seed(seed)
+wss[i] <- sum(kmeans(Test1, centers=i)$withinss)}
+plot(1:nc, wss, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")}
+#Original Within Sum Squares plotwssplot(Test1, nc=20)
+View(wssplot)
+View(wssplot)
+View(wssplot)
+wssplot <- function(Test1, nc=20, seed=123){
+wss <- (nrow(Test1)-1)*sum(apply(Test1,2,var))
+for (i in 2:nc){
+set.seed(seed)
+wss[i] <- sum(kmeans(Test1, centers=i)$withinss)}
+plot(1:nc, wss, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")}
+#Original Within Sum Squares plotwssplot(Test1, nc=20)
+View(wssplot)
+View(wssplot)
+View(wssplot)
+fviz_nbclust(Test1, kmeans, method = "wss") +
+geom_vline(xintercept = 4, linetype = 2)+
+labs(subtitle = "Within Sum of Squares")
+wssplot <- function(Test1, nc=20, seed=123){
+wss <- (nrow(Test1)-1)*sum(apply(Test1,2,var))
+for (i in 2:nc){
+set.seed(seed)
+wss[i] <- sum(kmeans(Test1, centers=i)$withinss)}
+plot(1:nc, wss, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")}
+#Original Within Sum Squares plotwssplot(Test1, nc=20)
+View(wssplot)
+View(wssplot)
+View(wssplot)
+install.packages("NbClust")
+fviz_nbclust(Test1, kmeans, method = "wss") +
+geom_vline(xintercept = 4, linetype = 2)+
+labs(subtitle = "Within Sum of Squares")
+fviz_nbclust(x, FUNcluster = NULL, method = c("silhouette", "wss",
+"gap_stat"), diss = NULL, k.max = 10, nboot = 100,
+verbose = interactive(), barfill = "steelblue",
+barcolor = "steelblue", linecolor = "steelblue",
+print.summary = TRUE, ...)
+fviz_gap_stat(gap_stat, linecolor = "steelblue", maxSE = list(method =
+"firstSEmax", SE.factor = 1))
+library(NbClust)
+fviz_nbclust(Test1, kmeans, method = "wss") +
+geom_vline(xintercept = 4, linetype = 2)+
+labs(subtitle = "Within Sum of Squares")
+View(wssplot)
